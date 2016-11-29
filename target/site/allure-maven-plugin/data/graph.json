@@ -1,0 +1,25 @@
+{
+  "testCases" : [ {
+    "uid" : "58e99544fc04f356",
+    "name" : "test",
+    "title" : "Test",
+    "time" : {
+      "start" : 1480456809322,
+      "stop" : 1480456824426,
+      "duration" : 15104
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "31611c40f3a628ec",
+    "name" : "test",
+    "title" : "Test",
+    "time" : {
+      "start" : 1480456809322,
+      "stop" : 1480456824426,
+      "duration" : 15104
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  } ]
+}
