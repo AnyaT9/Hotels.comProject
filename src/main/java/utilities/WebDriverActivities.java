@@ -136,14 +136,13 @@ public class WebDriverActivities {
 	 * Method executed After Every Class
 	 * 
 	 */
-	@AfterClass(enabled = true)
 	
-	/*
-	 * Close Driver
-	 */
+	
+	@AfterClass(enabled = true)
 	public static void closeDriver() {
 
 		myDriver.manage().deleteAllCookies();
+		
 		myDriver.close();
 		myDriver.quit();
 	}
