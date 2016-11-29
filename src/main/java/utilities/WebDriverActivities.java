@@ -109,7 +109,7 @@ public class WebDriverActivities {
 	 */
 	private static boolean isWindows() {
 
-		return (operatingSystem.toLowerCase().indexOf("win") >= 0);
+		//return (operatingSystem.toLowerCase().indexOf("win") >= 0);
 
 	}
 
