@@ -130,7 +130,7 @@ public class WebDriverActivities {
 			}
 			
 			/*
-			 * If it is LINUX Driver
+			 * If it is LINUX Driver .
 			 * 
 			 */
 		} else if (isUnix()) {
