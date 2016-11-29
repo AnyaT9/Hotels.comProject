@@ -23,7 +23,7 @@ public class WebDriverActivities {
 	 * Change driver Name to Use diffrent driver Options: chrome / firefox /
 	 */
 
-	private static String driverName = "chrome";
+	private static String driverName = "firefox";
 
 	/*
 	 * URL of the Site to be tested
@@ -57,40 +57,104 @@ public class WebDriverActivities {
 
 		String driverPath = currentDirectory + fileSeparator;
 
-		if (driverName.equalsIgnoreCase("fireFox")) {
-			myDriver = new FirefoxDriver();
-		} else if (isWindows()) {
+		/*
+		 * If it is MAC Driver
+		 * 
+		 */
+
+		if (isMac()) {
+
+			driverPath = driverPath + "MacWebDrivers" + fileSeparator;
+
+			/*
+			 * OPEN CHROME
+			 */
+
+			if (driverName.equalsIgnoreCase("chrome")) {
+				driverPath = driverPath + "chromedriver";
+				System.setProperty("webdriver.chrome.driver", driverPath);
+				myDriver = new ChromeDriver();
+
+				/*
+				 * OPEN FIREFOX
+				 */
+
+			} else if (driverName.equalsIgnoreCase("fireFox")) {
+
+				driverPath = driverPath + "geckodriver";
+
+				System.setProperty("webdriver.gecko.driver", driverPath);
+
+				myDriver = new FirefoxDriver();
+			}
+
+			else {
+				System.out.println("No Driver Found!");
+			}
+
+		}
+		
+		/*
+		 * If it is WINDOW Driver
+		 * 
+		 */
+
+		else if (isWindows()) {
+
+			/*
+			 * OPEN CHROME
+			 */
 
 			driverPath = driverPath + "WinWebDrivers" + fileSeparator;
+
 			if (driverName.equalsIgnoreCase("chrome")) {
 				driverPath = driverPath + "chromedriver.exe";
 				System.setProperty("webdriver.chrome.driver", driverPath);
 				myDriver = new ChromeDriver();
+
+				/*
+				 * OPEN FIREFOX
+				 */
+
+			} else if (driverName.equalsIgnoreCase("fireFox")) {
+
+				driverPath = driverPath + "geckodriver.exe";
+
+				System.setProperty("webdriver.gecko.driver", driverPath);
+
+				myDriver = new FirefoxDriver();
+
 			} else {
 				System.out.println("No Driver Found!");
 			}
-		} else if (isMac()) {
-			System.out.println("Crome Driver  to be Initialize..");
-			driverPath = driverPath + "MacWebDrivers" + fileSeparator;
-			if (driverName.equalsIgnoreCase("chrome")) {
-				driverPath = driverPath + "chromedriver";
-
-				System.setProperty("webdriver.chrome.driver", driverPath);
-
-				myDriver = new ChromeDriver();
-
-			} else {
-				System.out.println("No Driver Found!");
-			}
-
+			
+			/*
+			 * If it is LINUX Driver
+			 * 
+			 */
 		} else if (isUnix()) {
-
+			/*
+			 * OPEN CHROME
+			 */
 			driverPath = driverPath + "UnixWebDrivers" + fileSeparator;
+
 			if (driverName.equalsIgnoreCase("chrome")) {
 				driverPath = driverPath + "chromedriver";
 				System.setProperty("webdriver.chrome.driver", driverPath);
 				myDriver = new ChromeDriver();
-			} else {
+			}
+
+			else if (driverName.equalsIgnoreCase("fireFox")) {
+
+				driverPath = driverPath + "geckodriver";
+
+				System.setProperty("webdriver.gecko.driver", driverPath);
+
+				myDriver = new FirefoxDriver();
+			}
+
+			else {
+
 				System.out.println("No Driver Found!");
 			}
 
@@ -136,13 +200,12 @@ public class WebDriverActivities {
 	 * Method executed After Every Class
 	 * 
 	 */
-	
-	
+
 	@AfterClass(enabled = true)
+
 	public static void closeDriver() {
 
 		myDriver.manage().deleteAllCookies();
-		
 		myDriver.close();
 		myDriver.quit();
 	}
