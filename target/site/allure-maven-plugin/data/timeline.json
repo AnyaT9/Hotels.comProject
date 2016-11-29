@@ -1,0 +1,31 @@
+{
+  "hosts" : [ {
+    "title" : "Anjas-MacBook-Pro.local",
+    "threads" : [ {
+      "title" : "22624@Anjas-MacBook-Pro.local.main(1)",
+      "testCases" : [ {
+        "uid" : "33554de42b007347",
+        "name" : "test",
+        "title" : "Test",
+        "time" : {
+          "start" : 1480457523776,
+          "stop" : 1480457523785,
+          "duration" : 9
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "f57512719d747a58",
+        "name" : "test",
+        "title" : "Test",
+        "time" : {
+          "start" : 1480457523776,
+          "stop" : 1480457523785,
+          "duration" : 9
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}
