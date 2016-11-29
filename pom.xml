@@ -10,7 +10,7 @@
   <name>Hotels</name>
   <url>http://maven.apache.org</url>
 
-<!--To make it easy to upgrade to a newer version-->
+<!--To make it easy to upgrade to a newer version...-->
   
   <properties>   
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>     
