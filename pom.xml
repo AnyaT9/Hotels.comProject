@@ -23,10 +23,8 @@
 		
 		<!-- TestNG -->
 		<testng.version> 6.9.13.6 </testng.version>
-		
-		
+				
 		<!-- Allure Maven Plugins -->
-
 		<aspectj.version>1.8.5</aspectj.version> <!-- JavaScript framework -->
 		<allure.version>1.4.16</allure.version>		
 		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version> <!-- Report is first generated in Surefire then with JS help converts to allure report -->		
