@@ -11,8 +11,6 @@
 	<url>http://maven.apache.org</url>
 	
 	<properties>
-		
-	
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Force Maven to use Java 1.8 -->
@@ -30,19 +28,13 @@
 		<!-- Allure Maven Plugins -->
 
 		<aspectj.version>1.8.5</aspectj.version> <!-- JavaScript framework -->
-		<allure.version>1.4.16</allure.version>
-		
-		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version> <!-- Report is first generated in Surefire then with JS help converts to allure report -->
-		
-		<allure-maven-plugin.version>2.5</allure-maven-plugin.version>
-	
-		
-	</properties>
-	
+		<allure.version>1.4.16</allure.version>		
+		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version> <!-- Report is first generated in Surefire then with JS help converts to allure report -->		
+		<allure-maven-plugin.version>2.5</allure-maven-plugin.version>		
+	</properties>	
 <build>
     <plugins>
-      	<plugin>
-   
+      	<plugin>  
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version} </version>
@@ -59,20 +51,15 @@
                         <value>ru.yandex.qatools.allure.testng.AllureTestListener</value>
                     </property>
                 </properties>
-                </configuration>
-                
-     <dependencies>
-     
-     
+                </configuration>               
+     <dependencies>   
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
                         <version>${aspectj.version}</version>
                     </dependency>
                 </dependencies>
-
             </plugin>
-
             <!--Needed only to show reports locally. Run jetty:run and
             open localhost:8080 to show the report-->
             <plugin>
@@ -86,15 +73,10 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
-    
- 
+    </build>  
 <dependencies>
-
-   <!-- To create allure reports -->
-  
-         	<dependency>
-         
+   <!-- To create allure reports --> 
+         	<dependency>        
              <groupId>ru.yandex.qatools.allure</groupId>
         <artifactId>allure-testng-adaptor</artifactId>
         <version>${allure.version}</version>
@@ -105,38 +87,31 @@
                 </exclusion>
             </exclusions>
     	</dependency>
-    
-        
      <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>${selenium-java.version}</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
 			<version>${selenium-server.version}</version>
-		</dependency>
-		
+		</dependency>		
    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
   <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>6.9.13.6</version>
-  </dependency>
-  
+  </dependency> 
    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
  <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-remote-driver</artifactId>
     <version>3.0.1</version>
- </dependency>
-    
-  </dependencies>
- 
+ </dependency>   
+  </dependencies> 
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <plugins>
@@ -147,5 +122,4 @@
             </plugin>
         </plugins>
     </reporting>
-
 </project>
