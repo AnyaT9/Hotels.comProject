@@ -144,7 +144,6 @@ public class WebDriverActivities {
 		return (operatingSystem.toLowerCase().indexOf("nix") >= 0 || operatingSystem.toLowerCase().indexOf("nux") >= 0);
 	}
 	/*
-	 * 
 	 * Method executed After Every Class
 	 * 
 	 */
