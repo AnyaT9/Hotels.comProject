@@ -19,8 +19,6 @@ public class TestNew extends WebDriverActivities{
 	@Test
 	public void test(){
 	
-	System.out.println("PAGES TITLE:" + myDriver.getTitle());
-	
 
 }
 

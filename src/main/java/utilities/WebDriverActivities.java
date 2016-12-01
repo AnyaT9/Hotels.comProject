@@ -21,7 +21,7 @@ public class WebDriverActivities {
 	/*
 	 * Change driver Name to Use diffrent driver Options: chrome / firefox /
 	 */
-	private static String driverName = "firefox";
+	private static String driverName = "chrome";
 	/*
 	 * URL of the Site to be tested
 	 */
@@ -30,8 +30,6 @@ public class WebDriverActivities {
 	 * System Informations
 	 */
 	private final static String operatingSystem = System.getProperty("os.name");
-	private final static String operatingSystemVersion = System.getProperty("os.version");
-	private final static String systemArchitecture = System.getProperty("os.arch");
 	private final static String currentDirectory = System.getProperty("user.dir");
 	private final static String fileSeparator = System.getProperty("file.separator");
 
